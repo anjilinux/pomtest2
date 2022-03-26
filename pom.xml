@@ -12,6 +12,17 @@
   <name>tomcattest</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
+  
+  
+  <properties>
+		<docker.image.prefix>kammana</docker.image.prefix>
+		<sonar.host.url>http://192.168.1.2:9000/</sonar.host.url>
+
+	</properties>
+  
+  
+  
+  
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,6 +38,26 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
+  
+  
+  
+  
+  
+  
+  <distributionManagement>
+		 <snapshotRepository>
+		    <id>nexusRepo</id>
+		    <url>http://192.168.1.2:8081/repository/sample-snapshots/</url>
+		 </snapshotRepository>
+		
+		<repository>
+		    <id>nexusRepo</id>
+		    <url>http://192.168.1.2:8081/repository/sample-releases//</url>
+		</repository>
+  	</distributionManagement>
+  
+  
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
